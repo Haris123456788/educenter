@@ -13,7 +13,7 @@
   <!-- Basic Page Needs
 	================================================== -->
   <meta charset="utf-8">
-  <title>Educenter - Education HTML Template</title>
+  <title>Educenter - Education Website</title>
 
   <!-- Mobile Specific Metas
 	================================================== -->
@@ -154,7 +154,7 @@
         <h2 class="section-title">About Educenter</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat </p>
         <p>cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
-        <a href="about.html" class="btn btn-outline-primary">Learn more</a>
+        <a href="about.php" class="btn btn-outline-primary">Learn more</a>
       </div>
       <div class="col-md-6 order-1 order-md-2 mb-4 mb-md-0">
         <img class="img-fluid w-100" src="images/about/about-us.jpg" alt="about image">
@@ -343,7 +343,7 @@ $result= $conn->query($sql);
         <div class="card border-0 rounded-0 hover-shadow">
           <img class="card-img-top rounded-0" src="images/teachers/<?php echo $row['teacher_banner']?>" alt="teacher">
           <div class="card-body">
-            <a href="teacher-single.html">
+            <a href="teacher_detail.php?id=<?php echo $row['id']?>">
               <h4 class="card-title"><?php echo $row['name']?></h4>
             </a>
             <p>Teacher</p>

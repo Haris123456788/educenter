@@ -45,18 +45,13 @@
             <li class="nav-item @@courses">
               <a class="nav-link" href="courses.php">COURSES</a>
             </li>
-            <li class="nav-item @@events">
-              <a class="nav-link" href="events.php">EVENTS</a>
-            </li>
-            <li class="nav-item @@blog">
-              <a class="nav-link" href="blog.php">BLOG</a>
-            </li>
+
             <li class="nav-item @@blog">
               <a class="nav-link" href="teacher.php">Teachers</a>
             </li>
             
             <li class="nav-item @@contact">
-              <a class="nav-link" href="contact.html">CONTACT</a>
+              <a class="nav-link" href="contact.php">CONTACT</a>
             </li>
           </ul>
         </div>
