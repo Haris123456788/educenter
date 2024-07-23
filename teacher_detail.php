@@ -78,7 +78,7 @@ $data = mysqli_fetch_assoc($result);
     <div class="row">
       <div class="col-md-8">
         <ul class="list-inline custom-breadcrumb mb-2">
-          <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="teacher.html">Our Teacher</a></li>
+          <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="teacher.php">Our Teacher</a></li>
           <li class="list-inline-item text-white h3 font-secondary nasted"><?php echo $data['name']; ?></li>
         </ul>
         <p class="text-lighten mb-0"><?php echo $data['description']; ?></p>
@@ -135,7 +135,7 @@ $data = mysqli_fetch_assoc($result);
       <?php
 
 include('db.php');
-$sql= "SELECT * FROM `courses` WHERE `trending`=1 LIMIT 6";
+$sql= "SELECT * FROM `courses` WHERE `trending`=1 LIMIT 3";
 $result= $conn->query($sql);
 ?><?php while($row=$result->fetch_assoc()){ ?>
       <!-- course item -->

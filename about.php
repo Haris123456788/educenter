@@ -23,6 +23,19 @@
   <meta name="author" content="Themefisher">
   <meta name="generator" content="Themefisher Educenter HTML Template v1.0">
 
+  <?php
+include ('db.php');
+$sql = "SELECT * FROM about";
+$result = mysqli_query($conn, $sql);
+
+if(!$result) {
+    echo 'Could not run query: ' . mysqli_error($conn);
+    exit;
+}
+
+$data = mysqli_fetch_assoc($result);
+?>
+
   <!-- ** Plugins Needed for the Project ** -->
   <!-- Bootstrap -->
   <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
@@ -70,7 +83,7 @@
           <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="index.html">Home</a></li>
           <li class="list-inline-item text-white h3 font-secondary nasted">About Us</li>
         </ul>
-        <p class="text-lighten mb-0">Our courses offer a good compromise between the continuous assessment favoured by some universities and the emphasis placed on final exams by others.</p>
+        <p class="text-lighten mb-0"><?php echo $data['description']; ?></p>
       </div>
     </div>
   </div>
@@ -82,10 +95,9 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <img class="img-fluid w-100 mb-4" src="images/about/about-page.jpg" alt="about image">
+        <img class="img-fluid w-100 mb-4" src="images/about/<?php echo $data['about_banner']; ?>" alt="about image">
         <h2 class="section-title">ABOUT OUR JOURNY</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe ipsa illo quod veritatis, magni debitis fugiat dolore voluptates! Consequatur, aliquid. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat perferendis sint optio similique. Et amet magni facilis vero corporis quos.</p>
-        <p>exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum a, facere fugit error accusamus est officiis vero in, nostrum laboriosam corrupti explicabo, cumque repudiandae deleniti perspiciatis quae consectetur enim. Laboriosam!</p>
+        <p><?php echo $data['about_description']; ?></p>
       </div>
     </div>
   </div>
@@ -130,7 +142,7 @@
 <!-- /funfacts -->
 
 <!-- success story -->
-<section class="section bg-cover" data-background="images/backgrounds/success-story.jpg">
+<section class="section bg-cover" data-background="images/backgrounds/<?php echo $data['success_banner']; ?>">
   <div class="container">
     <div class="row">
       <div class="col-lg-6 col-sm-4 position-relative success-video">
@@ -141,8 +153,7 @@
       <div class="col-lg-6 col-sm-8">
         <div class="bg-white p-5">
           <h2 class="section-title">Success Stories</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
+          <p><?php echo $data['success_description']; ?></p>
         </div>
       </div>
     </div>
@@ -152,74 +163,40 @@
 
 <!-- teachers -->
 <section class="section">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-12">
-          <h2 class="section-title">Our Teachers</h2>
-        </div>
-        <!-- teacher -->
-        <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
-          <div class="card border-0 rounded-0 hover-shadow">
-            <img class="card-img-top rounded-0" src="images/teachers/teacher-1.jpg" alt="teacher">
-            <div class="card-body">
-              <a href="teacher-single.html">
-                <h4 class="card-title">Jacke Masito</h4>
-              </a>
-              <div class="d-flex justify-content-between">
-                <span>Teacher</span>
-                <ul class="list-inline">
-                  <li class="list-inline-item"><a class="text-color" href="https://facebook.com/themefisher"><i class="ti-facebook"></i></a></li>
-                  <li class="list-inline-item"><a class="text-color" href="https://twitter.com/themefisher"><i class="ti-twitter-alt"></i></a></li>
-                  <li class="list-inline-item"><a class="text-color" href="https://github.com/themefisher"><i class="ti-google"></i></a></li>
-                  <li class="list-inline-item"><a class="text-color" href="https://instagram.com/themefisher/"><i class="ti-linkedin"></i></a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- teacher -->
-        <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
-          <div class="card border-0 rounded-0 hover-shadow">
-            <img class="card-img-top rounded-0" src="images/teachers/teacher-2.jpg" alt="teacher">
-            <div class="card-body">
-              <a href="teacher-single.html">
-                <h4 class="card-title">Clark Malik</h4>
-              </a>
-              <div class="d-flex justify-content-between">
-                <span>Teacher</span>
-                <ul class="list-inline">
-                  <li class="list-inline-item"><a class="text-color" href="https://facebook.com/themefisher"><i class="ti-facebook"></i></a></li>
-                  <li class="list-inline-item"><a class="text-color" href="https://twitter.com/themefisher"><i class="ti-twitter-alt"></i></a></li>
-                  <li class="list-inline-item"><a class="text-color" href="https://github.com/themefisher"><i class="ti-google"></i></a></li>
-                  <li class="list-inline-item"><a class="text-color" href="https://instagram.com/themefisher/"><i class="ti-linkedin"></i></a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- teacher -->
-        <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
-          <div class="card border-0 rounded-0 hover-shadow">
-            <img class="card-img-top rounded-0" src="images/teachers/teacher-3.jpg" alt="teacher">
-            <div class="card-body">
-              <a href="teacher-single.html">
-                <h4 class="card-title">John Doe</h4>
-              </a>
-              <div class="d-flex justify-content-between">
-                <span>Teacher</span>
-                <ul class="list-inline">
-                  <li class="list-inline-item"><a class="text-color" href="https://facebook.com/themefisher"><i class="ti-facebook"></i></a></li>
-                  <li class="list-inline-item"><a class="text-color" href="https://twitter.com/themefisher"><i class="ti-twitter-alt"></i></a></li>
-                  <li class="list-inline-item"><a class="text-color" href="https://github.com/themefisher"><i class="ti-google"></i></a></li>
-                  <li class="list-inline-item"><a class="text-color" href="https://instagram.com/themefisher/"><i class="ti-linkedin"></i></a></li>
-                </ul>
-              </div>
-            </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12">
+        <h2 class="section-title">Our Teachers</h2>
+      </div>
+      <?php
+        include('db.php');
+        $sql= "SELECT * FROM `teachers`  LIMIT 3";
+        $result= $conn->query($sql);
+        while($row=$result->fetch_assoc()) {
+      ?>
+      <!-- teacher -->
+      <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
+        <div class="card border-0 rounded-0 hover-shadow">
+          <img class="card-img-top rounded-0" src="images/teachers/<?php echo $row['teacher_banner']?>" alt="teacher">
+          <div class="card-body">
+            <a href="teacher_detail.php?id=<?php echo $row['id']?>">
+              <h4 class="card-title"><?php echo $row['name']?></h4>
+            </a>
+            <p>Teacher</p>
+            <ul class="list-inline">
+              <li class="list-inline-item"><a class="text-color" href="https://facebook.com/themefisher"><i class="ti-facebook"></i></a></li>
+              <li class="list-inline-item"><a class="text-color" href="https://twitter.com/themefisher"><i class="ti-twitter-alt"></i></a></li>
+              <li class="list-inline-item"><a class="text-color" href="https://github.com/themefisher"><i class="ti-google"></i></a></li>
+              <li class="list-inline-item"><a class="text-color" href="https://instagram.com/themefisher/"><i class="ti-linkedin"></i></a></li>
+            </ul>
           </div>
         </div>
       </div>
+      <!-- teacher -->
+      <?php } ?>
     </div>
-  </section>
+  </div>
+</section>
   <!-- /teachers -->
 
 <!-- footer -->
