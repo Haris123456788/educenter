@@ -93,10 +93,10 @@ $data = mysqli_fetch_assoc($result);
   <div class="container">
     <div class="row">
       <div class="col-md-5 mb-5">
-        <img class="img-fluid w-100" src="images/teachers/teacher-1.jpg" alt="teacher">
+        <img class="img-fluid w-100" src="images/teachers/<?php echo $data['teacher_banner']; ?>" alt="teacher">
       </div>
       <div class="col-md-6 mb-5">
-        <h3>John Doe</h3>
+        <h3><?php echo $data['name']; ?></h3>
         <h6 class="text-color">Computer Science</h6>
         <p class="mb-5"><?php echo $data['teacher_description']; ?></p>
         <div class="row">
@@ -147,7 +147,7 @@ $result= $conn->query($sql);
               <li class="list-inline-item"><i class="ti-wallet mr-1 text-color"></i><?php echo $row['fee']?></li>
               <li class="list-inline-item"><a class="text-color" href="course_detail.php?id=<?php echo $row['id']?>"><?php echo $row['category']?></a></li>
             </ul>
-            <a href="course_detail.php?id=<?php echo $row['id']?>">
+            <a href="teacher_detail.php?id=<?php echo $row['id']?>">
               <h4 class="card-title"><?php echo $row['name']?></h4>
             </a>
             <p class="card-text mb-4"><?php echo $row['description']?></p>

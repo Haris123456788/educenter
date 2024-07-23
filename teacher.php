@@ -104,7 +104,7 @@
         <div class="card border-0 rounded-0 hover-shadow">
           <img class="card-img-top rounded-0" src="images/teachers/<?php echo $row['teacher_banner']?>" alt="teacher">
           <div class="card-body">
-            <a href="teacher-single.html">
+            <a href="teacher_detail.php?id=<?php echo $row['id']?>">
               <h4 class="card-title"><?php echo $row['name']?></h4>
             </a>
             <p>Teacher</p>
