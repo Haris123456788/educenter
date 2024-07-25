@@ -7,7 +7,7 @@
   <!-- Basic Page Needs
 	================================================== -->
   <meta charset="utf-8">
-  <title>Educenter - Education HTML Template</title>
+  <title>Educenter - Education Website</title>
 
   <!-- Mobile Specific Metas
 	================================================== -->
