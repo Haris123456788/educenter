@@ -17,6 +17,20 @@
   <meta name="author" content="Themefisher">
   <meta name="generator" content="Themefisher Educenter HTML Template v1.0">
 
+  
+  <?php
+include ('db.php');
+$sql = "SELECT * FROM contact";
+$result = mysqli_query($conn, $sql);
+
+if(!$result) {
+    echo 'Could not run query: ' . mysqli_error($conn);
+    exit;
+}
+
+$data = mysqli_fetch_assoc($result);
+?>
+
   <!-- ** Plugins Needed for the Project ** -->
   <!-- Bootstrap -->
   <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
@@ -61,10 +75,10 @@
     <div class="row">
       <div class="col-md-8">
         <ul class="list-inline custom-breadcrumb mb-2">
-          <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="index.html">Home</a></li>
+          <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="index.php">Home</a></li>
           <li class="list-inline-item text-white h3 font-secondary nasted">Contact Us</li>
         </ul>
-        <p class="text-lighten mb-0">Our courses offer a good compromise between the continuous assessment favoured by some universities and the emphasis placed on final exams by others.</p>
+        <p class="text-lighten mb-0"><?php echo $data['description']; ?></p>
       </div>
     </div>
   </div>
@@ -90,10 +104,10 @@
         </form>
       </div>
       <div class="col-lg-5">
-        <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit recusandae voluptates doloremque veniam temporibus porro culpa ipsa, nisi soluta minima saepe laboriosam debitis nesciunt. Dolore, labore. Accusamus nulla sed cum aliquid exercitationem debitis error harum porro maxime quo iusto aliquam dicta modi earum fugiat, vel possimus commodi, deleniti et veniam, fuga ipsum praesentium. Odit unde optio nulla ipsum quae obcaecati! Quod esse natus quibusdam asperiores quam vel, tempore itaque architecto ducimus expedita</p>
-        <a href="tel:+8802057843248" class="text-color h5 d-block">+880 20 5784 3248</a>
-        <a href="mailto:yourmail@email.com" class="mb-5 text-color h5 d-block">yourmail@email.com</a>
-        <p>71 Shelton Street<br>London WC2H 9JQ England</p>
+        <p class="mb-5"><?php echo $data['contact_description']; ?></p>
+        <a href="tel:+8802057843248" class="text-color h5 d-block"><?php echo $data['phone']; ?></a>
+        <a href="mailto:yourmail@email.com" class="mb-5 text-color h5 d-block"><?php echo $data['email']; ?></a>
+        <p><?php echo $data['address']; ?></p>
       </div>
     </div>
   </div>
