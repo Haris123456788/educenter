@@ -104,7 +104,7 @@ $data = mysqli_fetch_assoc($result);
               <i class="ti-book text-primary icon-md mr-2"></i>
               <div class="text-left">
                 <h6 class="mb-0">COURSES</h6>
-                <p class="mb-0">06 Month</p>
+                <p class="mb-0"><?php echo $data['time_period']; ?></p>
               </div>
             </div>
           </li>
@@ -113,7 +113,7 @@ $data = mysqli_fetch_assoc($result);
               <i class="ti-alarm-clock text-primary icon-md mr-2"></i>
               <div class="text-left">
                 <h6 class="mb-0">DURATION</h6>
-                <p class="mb-0">03 Hours</p>
+                <p class="mb-0"><?php echo $data['duration']; ?></p>
               </div>
             </div>
           </li>
@@ -140,16 +140,7 @@ $data = mysqli_fetch_assoc($result);
     <div class="row">
       <div class="col-12 mb-4">
         <h3>About Course</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-          commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-          nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-          anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-          laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-          dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-          consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem
-          ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut
-          labore et dolore magnam aliquam quaerat voluptatem.</p>
+        <p><?php echo $data['about_course']; ?></p>
       </div>
       <div class="col-12 mb-4">
         <h3 class="mb-3">Requirements</h3>
